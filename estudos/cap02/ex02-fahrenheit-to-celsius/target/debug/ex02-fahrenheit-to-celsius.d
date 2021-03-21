@@ -1,0 +1,1 @@
+/home/david/apps/rust/learning-rust/estudos/cap02/ex02-fahrenheit-to-celsius/target/debug/ex02-fahrenheit-to-celsius: /home/david/apps/rust/learning-rust/estudos/cap02/ex02-fahrenheit-to-celsius/src/main.rs
