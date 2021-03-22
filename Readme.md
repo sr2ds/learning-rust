@@ -115,3 +115,4 @@ Em relação aos comentários no código, há três formas de fazer comentários
 No livro ainda não abordou sobre o `rustdoc` mas eu já aprendi em outras pesquisas que fiz, em breve o livro deve abordar e voltamos a falar disso.
 
 Após vários exemplos de utilização, para fechar o capítulo, têm uma série de exercícios que farei dentro de `estudos/cap02`.
+PS: Eu brincarei praticando, então não espere respostas exatas para as questões do livro.
