@@ -36,7 +36,7 @@ Também fiz os exemplos com `cargo`, ele faz toda gestão mesmo no estilo `npm i
 
 Os arquivos de configuração aqui são `TOML`, que é no estilo `YAML` mesmo, não tem muito segredo ainda.
 
-## #02 - 17/03/2021 -> 3 dias de estudos com revisão espaçada
+## #02 - 17/03/2021 -> 3 dias de estudos com revisão espaçada + vários dias de exercícios 
 
 Este capítulo é maior e tem muitos detalhes a serem explorados e testados, tudo girou em torno dos tipos de dados do `Rust`. Os tipos primitivos, que já estamos acostumados como String, Inteiros, Floats e Conjuntos.
 
