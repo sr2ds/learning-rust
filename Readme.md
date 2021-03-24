@@ -1,6 +1,7 @@
-# Aprendendo Rust
+# Aprendendo Rust 🦀 📚 🧑‍🎓 
 
-Este repositório servirá como apoio aos meus estudos de Rust, que serão realizados como um hoobie, toda quarta-feira no estilo dia do futebol.
+Este repositório servirá como apoio aos meus estudos de Rust, que serão realizados como um hoobie 🎮, toda quarta-feira no estilo dia do futebol .
+Edit: Na terceira quarta-feira, eu já tinha lido o livro durante outros dias espalhados, e também praticado os exercícios. Isso acabará sendo um esforço semanal mesmo pois estou mega empolgado, mas quando a semana apertar de demandas, farei apenas na quarta-feira, como combinado 🙋
 
 Meu intuito é aprender outra linguagem que foge das que trabalho diariamente, que são de alto nível.
 
@@ -16,7 +17,7 @@ Curto estudar com essa playlist de fundo: https://music.youtube.com/watch?v=BMuk
 
 Pomodóro Timer: https://gnomepomodoro.org/
 
-## #01 - 10/03/2021 -> 2 horas de estudo
+## #01 Linguagem Rust - 10/03/2021 -> 2 horas de estudo 🦀
 
 Foi inicialmente desenvolvida por um membro da equipe do Firefox Reaseach, em 2010 o Firefox adotou ela e agora é mantida também pelo time Firefox (não somente pelo membro inicial).
 
@@ -36,7 +37,7 @@ Também fiz os exemplos com `cargo`, ele faz toda gestão mesmo no estilo `npm i
 
 Os arquivos de configuração aqui são `TOML`, que é no estilo `YAML` mesmo, não tem muito segredo ainda.
 
-## #02 - 17/03/2021 -> 3 dias de estudos com revisão espaçada + vários dias de exercícios 
+## #02 Ação Sequêncial - 17/03/2021 -> 3 dias de estudos com revisão espaçada + vários dias de exercícios 🦀
 
 Este capítulo é maior e tem muitos detalhes a serem explorados e testados, tudo girou em torno dos tipos de dados do `Rust`. Os tipos primitivos, que já estamos acostumados como String, Inteiros, Floats e Conjuntos.
 
@@ -115,4 +116,49 @@ Em relação aos comentários no código, há três formas de fazer comentários
 No livro ainda não abordou sobre o `rustdoc` mas eu já aprendi em outras pesquisas que fiz, em breve o livro deve abordar e voltamos a falar disso.
 
 Após vários exemplos de utilização, para fechar o capítulo, têm uma série de exercícios que farei dentro de `estudos/cap02`.
+
 PS: Eu brincarei praticando, então não espere respostas exatas para as questões do livro.
+PS: Cansei dos exercícios do capítulo 2, por enquanto. Fiz 9 de 13 e vou partir pro próximo capítulo hoje.
+
+## #03 Desvio Condicional - 24/03/2021 🦀
+
+Este capítulo trata do (obviamente) desvios condicionais. Ou seja, os if e else da vida.
+Para explicar tudo isso, claro, precisa-se falar de operadores lógicos como && || ! e tudo isso foi dito, assim como == != >= <=.
+Nada muito novidade no inicio para quem já estou lógica de programação e algorítimos.
+
+Um detalhe que há enfase, é que não é possível realizar operação ternária, aquele if inline atribuindo valor, exemplo `JavaScript`:
+
+```js
+const dolar = 4
+const brasilVenceu = dolar < 5 ? 'sim' : 'não'
+console.log(brasilVenceu)
+```
+
+No `Rust`, é possível fazer o if inline e ele retorna um valor sim, mas é menos elegante:
+
+```rust 
+fn main() {
+    let dolar :u8 = 4;
+    let brasil_venceu :&str = if dolar <5 { "sim" } else { "não" };
+    println!("Brasil venceu: {}", brasil_venceu)
+}
+```
+
+Outra coisa que é diferente e, eu particularmente, achei legal, é o `match`. Que é algo no estilo `switch case`, mas diferente:
+
+```rust 
+fn main() {
+    let dolar :u8 = 4;
+    let brasil_venceu :&str = if dolar <5 { "sim" } else { "não" };
+    match dolar {
+        4 => println!("Brasil venceu: {}", brasil_venceu),
+        5 => println!("Vish: {}", brasil_venceu),
+        6 .. 8 => println!("Vish: {}", brasil_venceu), // não funciona no playground pois é experimental -> números entre 6 e 8
+        9 | 10 => println!("Só devolvendo pros Índios: {}", brasil_venceu),
+        _ => println!("Não rolou match nenhum {}", brasil_venceu),
+    }
+    
+}
+```
+
+Achei bem semântico, até mais bonito que o `switch case` e você também pode fazer chamada de métodos ao invés de executar o println ali direto (que não deixa de ser um método kk).
