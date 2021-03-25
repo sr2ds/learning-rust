@@ -162,3 +162,44 @@ fn main() {
 ```
 
 Achei bem semântico, até mais bonito que o `switch case` e você também pode fazer chamada de métodos ao invés de executar o println ali direto (que não deixa de ser um método kk).
+
+Mais a frente entramos em algo diferente chamado `if let`. Com ele podemos realizar ações na validação, na hora dos exercícios vou entender com mais clareza, mas a impressão inicial é de que é simplesmente validar o retorno de uma função, coisa que já fazemos quase que naturalmente em `JavaScript`, mas posso estar errado. Em breve ficará mais claro.
+
+Voltando para o `match`, é possível utilizá-lo como uma mistura de `try catch` com `if`, para que, por exemplo, ao converter um tipo para outro que seja inválido, seja possível tratar o erro sem disparar pânico na trhead do programa.
+
+É uma chamada funcional, 'parecido' com o esquema de callbacks do `JavaScript`.
+
+
+```rust 
+fn main() {
+    let input :&str = "4.2";
+    let falso_flutuante :i32;
+
+    falso_flutuante = match input.trim().parse::<i32>() {
+        Ok(valor) => valor, // Ok recebe o valor correto como parâmetro e retorna para o falso_flutuante
+        Err(_) => 0, // Se deu erro "caiu no catch", ele retorna 0 para seguir o fluxo sem panico
+    };
+
+    println!("Falso Flutuante receberá 0 pois não conseguiu converter 4.2 para um i32: {}", falso_flutuante)
+}
+```
+
+Também dá pra fazer algo similar com o `if let`:
+
+```rust 
+fn main() {
+    let input :&str = "4.2";
+    let falso_flutuante :i32;
+
+    if let Ok(valor) = input.trim().parse::<i32>() {
+        falso_flutuante = valor
+    } else {
+        falso_flutuante = 0
+    }
+
+    println!("Falso Flutuante receberá 0 pois não conseguiu converter 4.2 para um i32: {}", falso_flutuante)
+}
+```
+Por hora, eu estou achando mais semântico esse tipo de validação com o `match`.
+
+Isso fecha o capítulo 3, agora vou aos exercícios.
