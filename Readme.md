@@ -120,7 +120,7 @@ Após vários exemplos de utilização, para fechar o capítulo, têm uma série
 PS: Eu brincarei praticando, então não espere respostas exatas para as questões do livro.
 PS: Cansei dos exercícios do capítulo 2, por enquanto. Fiz 9 de 13 e vou partir pro próximo capítulo hoje.
 
-## #03 Desvio Condicional - 24/03/2021 🦀
+## #03 Desvio Condicional - 24/03/2021 -> 2 dias de estudos + exercícios 🦀
 
 Este capítulo trata do (obviamente) desvios condicionais. Ou seja, os if e else da vida.
 Para explicar tudo isso, claro, precisa-se falar de operadores lógicos como && || ! e tudo isso foi dito, assim como == != >= <=.
@@ -203,3 +203,6 @@ fn main() {
 Por hora, eu estou achando mais semântico esse tipo de validação com o `match`.
 
 Isso fecha o capítulo 3, agora vou aos exercícios.
+
+PS: Em nenhum exercício eu copio e colo do anterior, nem fico consultando o livro. Eu literalmente faço um a um. Entretanto, cansei de fazer entrada de input e estou criando método para resolver isso sem ficar repetindo tanto a tratativa e a entrada de dados. Vou continar digitando tudo sem repetir, mas agora com um método para facilitar.
+Sobre criação de métodos, no livro não chegamos nisso ainda mas aprendi aqui: https://doc.rust-lang.org/rust-by-example/fn.html
