@@ -17,6 +17,8 @@ Curto estudar com essa playlist de fundo: https://music.youtube.com/watch?v=BMuk
 
 Pomodóro Timer: https://gnomepomodoro.org/
 
+Edit: Estou no capítulo 4 e não pretendo fazer todos os exercícios daqui pra frente, apenas explorar as coisas realmente novas (pra mim) do comportamente da linguagem.
+
 ## #01 Linguagem Rust - 10/03/2021 -> 2 horas de estudo 🦀
 
 Foi inicialmente desenvolvida por um membro da equipe do Firefox Reaseach, em 2010 o Firefox adotou ela e agora é mantida também pelo time Firefox (não somente pelo membro inicial).
@@ -206,3 +208,32 @@ Isso fecha o capítulo 3, agora vou aos exercícios.
 
 PS: Em nenhum exercício eu copio e colo do anterior, nem fico consultando o livro. Eu literalmente faço um a um. Entretanto, cansei de fazer entrada de input e estou criando método para resolver isso sem ficar repetindo tanto a tratativa e a entrada de dados. Vou continar digitando tudo sem repetir, mas agora com um método para facilitar.
 Sobre criação de métodos, no livro não chegamos nisso ainda mas aprendi aqui: https://doc.rust-lang.org/rust-by-example/fn.html
+
+## #04 Laços - 31/03/2021 -> 1 hora em média para estudo e réplica de exemplo 🦀
+
+Os laços em `Rust` são, ao meu ver, normais. Não há nada de especial a não ser o fato de não haver `do while`. Apesar que eu raramente/nunca preciso usar `do while` na vida real.
+
+Existe um laço super legal chamado `loop` que não precisa de nada para iterar e o controle de saída deve ser feito internamente, algo assim:
+
+```rust
+loop {
+    // vai rodar eternamente, a não ser que dê um break;
+}
+```
+
+Outra coisa legal, mas não é exclusivo das iterações, é a possibilidade de definir sequências de formas bem simples como:
+
+```rust
+for i in 1 .. 10 {
+    // vai de 1 a 10, não precisa criar um array de [1,2,3,4...]
+}
+```
+
+O `break` e o `continue` são normais como em outras linguagens, não há nem o que comentar aqui.
+
+Neste capítulo há um desafio de adivinhação que é simples mas é a primeira vez que o livro explora em relação a instalação e uso de uma dependência externa, vou replicar o exemplo em `estudos/cap04/ex-random`.
+
+Depois de incluir a dependencia no `Cargo.toml`, não precisa rodar um `npm install` como no `NodeJs`. Basta executar o programa com `cargo run` que ele mesmo já resolve a lista de dependencias.
+
+Este exercício é legal pois além de tratar sobre o uso de uma lib externa, também brinca com outros recursos do `std` e mostra o uso do `loop`.
+
