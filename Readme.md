@@ -1,7 +1,10 @@
-# Aprendendo Rust 🦀 📚 🧑‍🎓 
+# Aprendendo Rust | Learning Rust 🦀 📚 🧑‍🎓
 
-Este repositório servirá como apoio aos meus estudos de Rust, que serão realizados como um hoobie 🎮, toda quarta-feira no estilo dia do futebol .
-Edit: Na terceira quarta-feira, eu já tinha lido o livro durante outros dias espalhados, e também praticado os exercícios. Isso acabará sendo um esforço semanal mesmo pois estou mega empolgado, mas quando a semana apertar de demandas, farei apenas na quarta-feira, como combinado 🙋
+<div align="center">
+    <img src="assets/rust-language-logo.jpg" width="40%"> 
+</div>
+
+Este repositório servirá como apoio aos meus estudos de Rust, que serão realizados como um hoobie 🎮, toda quarta-feira no estilo dia do futebol.
 
 Meu intuito é aprender outra linguagem que foge das que trabalho diariamente, que são de alto nível.
 
@@ -17,7 +20,12 @@ Curto estudar com essa playlist de fundo: https://music.youtube.com/watch?v=BMuk
 
 Pomodóro Timer: https://gnomepomodoro.org/
 
-Edit: Estou no capítulo 4 e não pretendo fazer todos os exercícios daqui pra frente, apenas explorar as coisas realmente novas (pra mim) do comportamente da linguagem.
+Link para comprar o livro Primeiros Passos com a Linguagem Rust: https://amzn.to/3dBDBF1
+
+Edit 1: Na terceira quarta-feira, eu já tinha lido o livro durante outros dias espalhados, e também praticado os exercícios. Isso acabará sendo um esforço semanal mesmo pois estou mega empolgado, mas quando a semana apertar de demandas, farei apenas na quarta-feira, como combinado 🙋
+
+Edit 2: Estou no capítulo 4 e não pretendo fazer todos os exercícios daqui pra frente, apenas explorar as coisas realmente novas (pra mim) do comportamento da linguagem.
+
 
 ## #01 Linguagem Rust - 10/03/2021 -> 2 horas de estudo 🦀
 
@@ -237,3 +245,141 @@ Depois de incluir a dependencia no `Cargo.toml`, não precisa rodar um `npm inst
 
 Este exercício é legal pois além de tratar sobre o uso de uma lib externa, também brinca com outros recursos do `std` e mostra o uso do `loop`.
 
+## #05 Sub-Rotinas - 01/04/2021 -> 3 horas de estudo e prática em dias distribuídos 🦀
+
+Este capítulo aborda o que no dia-a-dia generalizamos para `funções`, mas é super legal retomar estes conceitos que acabamos esquecendo no decorrer do trabalho.
+
+Nem tudo que é `function` é uma função. Quando há retorno é função. Quando não há, é um procedimento.
+
+Com `Rust`, mesmo que não opte por seguir orientação a objetos, podemos desenvolver em `bottom-up`. Ou seja, começar com as sub-rotinas e só depois chamá-las. Ou também fazer o contrário (que até faz mais sentido no exemplo), desenvolver o `main()` com as chamadas das sub-rotinas que ainda nem existem.
+
+Nós não criamos funções atoa no dia-a-dia, geralmente criamos para poder reaproveitar o código e também para poder abstrair a complexidade. 
+Para resolver problemas muito complexos, uma forma de melhor fazer é quebrando este problema grande em vários menores, isso torna o processo de solução lógico mais simples e também nos permite criar mecanismos de testes automátizados saudáveis.
+
+Uma sugestão do autor, que eu gostei, é ter uma espécie de styleguide sobre quando criar outra sub-rotina, por exemplo, se a lógica passou de X linhas, deve ser dividida.
+
+Sub-rotinas são sequênciais, executadas sincronamente. Para o paralelismo e assincronicidade, utilizamos corrotinas. Também conhecido como `async/await` mas ainda não temos exemplos disso no livro.
+
+Uma coisa beeem legal é que temos que tipar o retorno da função, veja um exemplo de função que eu mesmo já fiz nos exercícios:
+
+```rust
+fn get_i32() -> i32 {
+    println!("Entre com o valor para adivinhação: ");
+    let mut input = String::new();
+    let number :i32;
+ 
+    io::stdout().flush().unwrap();
+    io::stdin().read_line(&mut input).unwrap();
+    number = match input.trim().parse::<i32>() {
+        Ok(valor) => valor,
+        Err(_) => 0,
+    };
+    return number
+}
+```
+
+Note que o ` -> i32` é a definição do tipo de retono que essa função tem que retornar. Caso você tente retornar algo de outro tipo, o compilador te avisará.
+
+Sobre escopo e visibilidade de variáveis e constantes, o autor recomenda declarar constantes sempre em nível de escopo global, ainda não está explicado o motivo real disso mas acredito que quando chegarmos em `ownership` e `bowrring` eu saberei um pouco mais.
+
+Em `Rust` podemos fechar um escopo exclusivo mesmo que dentro de um lugar aparentemente global, algo assim:
+
+```rust
+fn main() {
+    let exemplo_global :i32 = 99;
+    {
+        let numero_isolado :i32 = 12; // só tem visibilidade dentro do { }
+        println!("Acesso a varíavel de fora {}", exemplo_global);
+    }
+    println!("Isso causará erro {}", numero_isolado); // não está acessível aqui
+}
+```
+
+O código acima retorna um erro dizendo que `numero_isolado` não foi encontrado neste escopo, mas note que o que foi definido acima tem visibilidade dentro do `{}`.
+
+Em relação a definição de um 'procedimento', ou função sem retorno, é simples, basta não ter o `return`, o que também faz não haver a necessidade de especificar o tipo de retono, como fiz acima com `-> i32`.
+
+Não é obrigatório o uso da palavra `return` para retornar algo, pode-se simplesmente escrever o nome da varíavel e pronto, algo assim:
+
+```rust
+fn get_i32() -> i32 {
+    println!("Entre com o valor para adivinhação: ");
+    let mut input = String::new();
+    let number :i32;
+ 
+    io::stdout().flush().unwrap();
+    io::stdin().read_line(&mut input).unwrap();
+    number = match input.trim().parse::<i32>() {
+        Ok(valor) => valor,
+        Err(_) => 0,
+    };
+    
+    number // Não pode ter ponto e vírgula nesse caso, isso é um exemplo de retorno sem uso da palavra return
+}
+```
+
+O autor dá alguns exemplos sobre declaração de varíavel com rotina, algo como: 
+
+```rust
+fn main() {
+    let meu_get = get_i32; // define o valor de meu_get como a chamada da sub rotina
+}
+
+fn get_i32() -> i32 {
+   // ...
+}
+```
+
+Que também pode ser feito com inferência, algo mais robusto e aproveitando dos tipos:
+
+```rust
+fn main() {
+    let meu_get = fn(i32) -> i32 = get_i32; // define o valor de meu_get como a chamada da sub rotina
+}
+
+fn get_i32() -> i32 {
+   // ...
+}
+```
+
+No exemplo abaixo veremos sobre receber um parâmetro do tipo rotina em uma função:
+
+```rust
+fn convert_i64_from_i32(num :i64) -> i32 {
+}
+
+fn get_i64_and_return_i32(subrotina: fn(i64) -> i32) -> i32 {
+   // essa função aguarda como parâmetro uma rotina e os tipos de entrada e saída já declarados
+}
+```
+
+É possível escrevermos `closures` com `Rust`, também chamada de função fechada e/ou função anônimas, veja dois exemplos onde a varíavel `sucessor` recebe um parâmetro `i32` e retorna ele + 1.
+
+```rust
+let incrementador = | x :i32 | { x + 1 };
+incrementador(1);
+```
+
+```rust
+let incrementador = | x :i32 | x + 1;
+incrementador(1);
+```
+
+Também podemos definir o tipo do retorno:
+
+```rust
+let incrementador = | x :i32 -> i32 | x + 1;
+incrementador(1);
+```
+
+Para uma visão mais clara, isso pode acontecer como um exemplo de função completa, com regras complexas e quebra de linha:
+
+```rust
+let incrementador = | x :i32 -> i32 | {
+    let valor_incremento :i32 = 1;
+    let valor_incrementado :i32 = x + valor_incremento;
+    return valor_incrementado
+}
+
+incrementador(1);
+```
