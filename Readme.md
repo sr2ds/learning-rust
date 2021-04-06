@@ -383,3 +383,60 @@ let incrementador = | x :i32 -> i32 | {
 
 incrementador(1);
 ```
+
+## #06 Complementos - 05/04/2021 🦀
+
+Este capítulo aborda diversos tópicos que são importantes na linguagem, começando por conversão de tipos.
+
+O compilador `Rust` não converte tipos para você, isso precisa ser feito explicitamente. Sendo assim, lídar com tipos precisa ser algo natural na mente do programador `Rust`. O primeiro exemplo de conversão, é um que já até usei em algum exercício, que é a palavra mágica `as`.
+
+```rust
+let numero64 :i64 = 100;
+let numero32 :i32 = numero64 as i32;
+```
+
+Desta forma, você está criando uma varíavel i32 à partir de uma i64 e fazendo a conversão durante a declaração.
+
+Há cuidados que precisam ser notados nessas conversões, afinal você está trazendo de um tipo para outro e, muitas vezes, o tipo de origem pode contemplar dados maiores que o tipo destino, como vimos na tabela lá no capítulo 2.
+
+Aqui está uma lista com alguns exemplos de conversões com a utilização do `as`:
+
+```rust
+let valor1 = true as u8; // 1
+let valor2 = false as u8 ; // 0
+let valor3 = 65u8 as char; // A
+let valor4 = -5i8 as u8; // 251
+let valor5 = 10.99f32 as i8; // 10
+let valor6 = 513u32 as u8; // 1 
+let valor7 = 987u32 as u64; //987
+let valor8 = -9i8 as i16; //-9
+```
+
+Na sequência, o sub tópico aborda os tipos de ponteiros possíveis em `Rust`.
+É um tanto que complexo e vou tentar simplificar isso nas elaborações dos exercícios, começando pelos ponteiros por referência, onde teremos exemplos do uso do `&` para desestruturação e do `*` para desreferência. Honestamente eu ainda não sei a diferença do uso deles ao nível de como é o armazenamento disso na memória ram, o livro ainda não abordou neste nível e talvez nem vá.
+
+Fiz alguns testes sobre desestruturação e desreferência mas não consegui ainda fazer print da posição da memória quando é desreferencia, recebo erros por que o ponteiro não está implementado para tipo inteiro, pelo que pesquisei é possível implementar isso com uma trait, porém, não avancei muito pois não ví nada a respeito de traits no `Rust` ainda, então vou seguindo um passo de cada vez. No entando, consegui notar que a desestruturação realmente se trata de outra posição na memória ram:
+
+```
+Original: 10 -> posiçao de memoria: 0x557ed01c5000
+valor por desestruturação (&): 10 -> posiçao de memoria: 0x7ffcd7124fe4
+valor por desreferencia (*): 10 -> não consegui pegar posição na memória
+```
+
+Note que, no valor inicial e na desestruração as posições são outras. Ou seja, tudo indica ser outro dado.
+
+Em um novo exemplo, quando você cria a varíavel assim: `let valor = &10i32`, com o `&`, na verdade você está criando a valor a partir de outra alocação que é a do 10i32.
+Dentro do método `change_data` em 'estudos/cap06/ex01-ref-pointers/src/main.rs' da para entender melhor meus testes, e aqui está o resultado, note que mesmo após alterado o valor, a posição permanece a mesma como deveria:
+
+```
+valor é definido com mut com valor que 10 = &10i32
+valor: 10 -> posiçao de memoria: 0x55dda2511038
+&10i32: 10 -> posiçao de memoria: 0x55dda2511038
+Desetruturação de valor: 10 -> posiçao de memoria: 0x7fff17ac27e0
+
+valor receberá um novo valor que é 11 = &11i32
+&11i32: 11 -> posiçao de memoria: 0x55dda251103c
+valor após mudança: 11 -> posiçao de memoria: 0x55dda251103c
+Desetruturação de valor após mudança: 11 -> posiçao de memoria: 0x7fff17ac27e0
+```
+
