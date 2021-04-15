@@ -384,7 +384,7 @@ let incrementador = | x :i32 -> i32 | {
 incrementador(1);
 ```
 
-## #06 Complementos - 05/04/2021 🦀
+## #06 Complementos - 05/04/2021 🦀 
 
 Este capítulo aborda diversos tópicos que são importantes na linguagem, começando por conversão de tipos.
 
@@ -440,3 +440,21 @@ valor após mudança: 11 -> posiçao de memoria: 0x55dda251103c
 Desetruturação de valor após mudança: 11 -> posiçao de memoria: 0x7fff17ac27e0
 ```
 
+Na sequência o autor abordou sobre ponteiros exclusivos e aprensentou a possibilidade de definir as varíaveis com o ponteiro fixo utilizando, `Box::new()`. 
+
+Eu vejo tudo isso em relação a alocação de memória com bons olhos, preciso e vou praticar pois acredito que realmente essa preocupação nos permite criar algorítimos realmente poderosos e enxutos, coisa que em linguagens de alto nível acabam nem sendo uma extrema preocupação como é aqui no baixo nível.
+
+É possível através de ponteiros brutos, criar varíaveis de forma menos segura na memória, aqui está um exemplo dessa definição:
+
+Note que para utilizá-la, é necessário que seja feito em um bloco unsafe.
+
+```rust
+let imutavel = 10 as *const i32;
+unsafe {
+    println!("{}", imutavel);
+}
+```
+
+É possível criar uma lib desacoplada do arquivo principal, há algumas maneiras de fazer isso e neste capítulo o livro aborda criando um arquivo, declarando na sessão lib do `Cargo.Toml` e importando para o main. Você pode ver um exemplo disso no `estudos/cap06/ex03-creating-lib`, nada complexo, é apenas o teste de importação de lib. Também há como desenvolver como `mod`, mas ainda não foi falado no livro.
+
+## #06 Estrutura homogêneas - 15/04/2021 🦀 
