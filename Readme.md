@@ -1,7 +1,7 @@
 # Aprendendo Rust | Learning Rust 🦀 📚 🧑‍🎓
 
 <div align="center">
-    <img src="assets/rust-language-logo.jpg" width="40%"> 
+    <img src="assets/rust-language-logo.jpg" width="30%"> 
 </div>
 
 Este repositório servirá como apoio aos meus estudos de Rust, que serão realizados como um hoobie 🎮, toda quarta-feira no estilo dia do futebol.
@@ -26,8 +26,12 @@ Edit 1: Na terceira quarta-feira, eu já tinha lido o livro durante outros dias 
 
 Edit 2: Estou no capítulo 4 e não pretendo fazer todos os exercícios daqui pra frente, apenas explorar as coisas realmente novas (pra mim) do comportamento da linguagem.
 
+Edit 3: Estou no capítulo 6 e comecei a praticar em alguns pequenos projetos, consulte meu git.
 
-## #01 Linguagem Rust - 10/03/2021 -> 2 horas de estudo 🦀
+Feedback pontual: Passando da metade do livro, já posso dizer que o conteúdo é legal e de simples compreensão.
+Não posso dizer que você estará pronto para ser um `Rust Developer` só com esta leitura, para isso precisará por em prática o que for aprendendo em outros contextos, principalmente para compreender os padrões usados nos grandes projetos, assim como explorar os poderes das bibliotecas internas. Mas o livro já dá um ponta pé inicial sim.
+
+# #01 Linguagem Rust - 10/03/2021 -> 2 horas de estudo 🦀
 
 Foi inicialmente desenvolvida por um membro da equipe do Firefox Reaseach, em 2010 o Firefox adotou ela e agora é mantida também pelo time Firefox (não somente pelo membro inicial).
 
@@ -47,7 +51,7 @@ Também fiz os exemplos com `cargo`, ele faz toda gestão mesmo no estilo `npm i
 
 Os arquivos de configuração aqui são `TOML`, que é no estilo `YAML` mesmo, não tem muito segredo ainda.
 
-## #02 Ação Sequêncial - 17/03/2021 -> 3 dias de estudos com revisão espaçada + vários dias de exercícios 🦀
+# #02 Ação Sequêncial - 17/03/2021 -> 3 dias de estudos com revisão espaçada + vários dias de exercícios 🦀
 
 Este capítulo é maior e tem muitos detalhes a serem explorados e testados, tudo girou em torno dos tipos de dados do `Rust`. Os tipos primitivos, que já estamos acostumados como String, Inteiros, Floats e Conjuntos.
 
@@ -79,7 +83,7 @@ No JS, ao declarar uma varíavel com `let`, ele já é automáticamente mútavel
 
 Também é possível definir variáveis com tipos em outros formatos, como binário, octal e hexadecimal.
 
-Ainda na sessão de varíaveis, o livro mostra exemplos sobre desserialização (mas não usa esse termo), ao atribuir duas varíaveis com dados extraídos de uma tupla ou array. 
+Ainda na sessão de varíaveis, o livro mostra exemplos sobre desestruturação (mas não usa esse termo), ao atribuir duas varíaveis com dados extraídos de uma tupla ou array. 
 
 Por exemplo: 
 
@@ -130,7 +134,7 @@ Após vários exemplos de utilização, para fechar o capítulo, têm uma série
 PS: Eu brincarei praticando, então não espere respostas exatas para as questões do livro.
 PS: Cansei dos exercícios do capítulo 2, por enquanto. Fiz 9 de 13 e vou partir pro próximo capítulo hoje.
 
-## #03 Desvio Condicional - 24/03/2021 -> 2 dias de estudos + exercícios 🦀
+# #03 Desvio Condicional - 24/03/2021 -> 2 dias de estudos + exercícios 🦀
 
 Este capítulo trata do (obviamente) desvios condicionais. Ou seja, os if e else da vida.
 Para explicar tudo isso, claro, precisa-se falar de operadores lógicos como && || ! e tudo isso foi dito, assim como == != >= <=.
@@ -217,7 +221,7 @@ Isso fecha o capítulo 3, agora vou aos exercícios.
 PS: Em nenhum exercício eu copio e colo do anterior, nem fico consultando o livro. Eu literalmente faço um a um. Entretanto, cansei de fazer entrada de input e estou criando método para resolver isso sem ficar repetindo tanto a tratativa e a entrada de dados. Vou continar digitando tudo sem repetir, mas agora com um método para facilitar.
 Sobre criação de métodos, no livro não chegamos nisso ainda mas aprendi aqui: https://doc.rust-lang.org/rust-by-example/fn.html
 
-## #04 Laços - 31/03/2021 -> 1 hora em média para estudo e réplica de exemplo 🦀
+# #04 Laços - 31/03/2021 -> 1 hora em média para estudo e réplica de exemplo 🦀
 
 Os laços em `Rust` são, ao meu ver, normais. Não há nada de especial a não ser o fato de não haver `do while`. Apesar que eu raramente/nunca preciso usar `do while` na vida real.
 
@@ -245,7 +249,7 @@ Depois de incluir a dependencia no `Cargo.toml`, não precisa rodar um `npm inst
 
 Este exercício é legal pois além de tratar sobre o uso de uma lib externa, também brinca com outros recursos do `std` e mostra o uso do `loop`.
 
-## #05 Sub-Rotinas - 01/04/2021 -> 3 horas de estudo e prática em dias distribuídos 🦀
+# #05 Sub-Rotinas - 01/04/2021 -> 3 horas de estudo e prática em dias distribuídos 🦀
 
 Este capítulo aborda o que no dia-a-dia generalizamos para `funções`, mas é super legal retomar estes conceitos que acabamos esquecendo no decorrer do trabalho.
 
@@ -384,7 +388,7 @@ let incrementador = | x :i32 -> i32 | {
 incrementador(1);
 ```
 
-## #06 Complementos - 05/04/2021 🦀 
+# #06 Complementos - 05/04/2021 🦀 
 
 Este capítulo aborda diversos tópicos que são importantes na linguagem, começando por conversão de tipos.
 
@@ -457,4 +461,112 @@ unsafe {
 
 É possível criar uma lib desacoplada do arquivo principal, há algumas maneiras de fazer isso e neste capítulo o livro aborda criando um arquivo, declarando na sessão lib do `Cargo.Toml` e importando para o main. Você pode ver um exemplo disso no `estudos/cap06/ex03-creating-lib`, nada complexo, é apenas o teste de importação de lib. Também há como desenvolver como `mod`, mas ainda não foi falado no livro.
 
-## #06 Estrutura homogêneas - 15/04/2021 🦀 
+# #07 Estruturas homogêneas - 15/04/2021 🦀 
+
+Este capítulo aborda estrutura de diversos tipos de matrizes/arrays, pesquisa e ordenação. Os exemplos são bem completos até para quem não é de programação, vou tentar resumir por tópico com enfase nas particularidades do `Rust`.
+
+## Matriz Estática
+
+Chamamos de matriz estática quando sabemos previamente o tamanho (dimensão) que iremos utilizar. Ou seja, se você precisa de um array de 10 posições, já o declara com 10 posições e isso é uma matriz estática.
+Seja esse array populado por interação do usuário ou por você programando, desde que o tamanho seja fixo, é uma matriz estática.
+
+Também é importante ressaltar que os tipos dos dados devem ser os mesmos no interior da matriz.
+
+### Matriz Unidimensional
+
+Quando a matriz possuí apenas um nível, ou um conjunto direto de dados, chamamos de unidimensional.
+
+Alguns exemplos de declarações de matrizes em `Rust`:
+
+```rust
+
+fn main() {
+    let _a = [0; 5]; // 5 inteiros de 32 bits
+    println!("{:?}", _a); // [0, 0, 0, 0, 0]
+
+    let mut _b = [0; 5]; // 5 inteiros de 32 bits mutáveis
+    println!("{:?}", _b); // [0, 0, 0, 0, 0]
+
+    // arrays tipados
+    let _c: [f32; 5] = [0.; 5]; // 5 floats de 32 bits
+    println!("{:?}", _c); // [0.0, 0.0, 0.0, 0.0, 0.0]
+    
+    let mut _d: [f32; 5] = [0.; 5]; // 5 floats de 32 bits mutáveis
+    println!("{:?}", _d); // [0.0, 0.0, 0.0, 0.0, 0.0]
+}
+
+```
+
+### Matriz Bidimensional
+Quando a matriz possuí mais de um nível chamamos de bidimensional, podemos dizer que é um array de arrays.
+
+```rust
+
+fn main() {
+    let _f = [[0;5]; 4]; // 4 arrays de 5 posições
+    println!("{:?}", _f); // [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]
+
+    let _g: [[i32;3];5] = [[10;3];5]; // 5 arrays de 3 posições populando valor 10:i32 em cada espaço
+    println!("{:?}", _g); // [[10, 10, 10], [10, 10, 10], [10, 10, 10], [10, 10, 10], [10, 10, 10]]
+}
+
+```
+
+### Matriz Interna
+
+Chamamos de matriz interna quando os dados já são definidos previamente, e externa quando a entrada dos dados é feita com interação do usuário.
+```rust
+fn main() {
+    let _a = [1, 2, 3]; 
+    println!("{:?}", _a); // [1, 2, 3]
+
+    let _b: [f32; 2] = [1.5, 1.8];
+    println!("{:?}", _b); // [1.5, 1.8]
+
+    let _c_: [[[i32;3];3];5] = [[[10;3];3];5]; // 5 arrays, contendo 3 arrays de 3 posições cada, populando valor 10:i32 em cada espaço
+    println!("{:?}", _c_); // [[[10, 10, 10], [10, 10, 10], [10, 10, 10]], [[10, 10, 10], [10, 10, 10], [10, 10, 10]], [[10, 10, 10], [10, 10, 10], [10, 10, 10]], [[10, 10, 10], [10, 10, 10], [10, 10, 10]], [[10, 10, 10], [10, 10, 10], [10, 10, 10]]]
+}
+```
+
+## Matriz Dinâmica
+
+Diferente das matrizes estáticas que utilizamos quando já sabemos a dimensão previamente, a matriz dinâmica é populada dinamicamente (como o nome já sugere). E este tipo de matriz, chamamos de vetor.
+
+Para definições de vetores internos, contamos com a ajuda do `Box::new()` e para vetores externos (quando o dado é populado com interação do usuário) contaremos com a macro `vec!`.
+
+Em relação ao consumo de memória, quando fazemos a declaração de uma matriz estática, o compilador trata de reservar este espaço na memória ram durante o ciclo de vida do programa, no caso de um vetor é diferente, pois a alocação do recurso é dinâmica. Se bem utilizado, garante uma economia no consumo.
+
+```rust
+    let a = vec![0.; tamanho];
+```
+
+As matrizes dinâmicas seguem a mesma linha de unidimensional e bidimensional, o que muda é que a definição é feita com o uso da macro `vec!`.
+
+## Fatiamento de Matriz
+
+O livro aborda dois exemplos de uso de `slice`, que mostrarei abaixo:
+
+```rust
+    let a = [1,2,3,4,5,6,7,8];
+    let fatiados = &a[3..8]; // [4, 5, 6, 7, 8]
+    println!("{:?}",  fatiados);
+    
+    let tudo = &a[..];
+    println!("{:?}",  tudo);  // [1,2,3,4,5,6,7,8]
+```
+
+## Ordenação e Pesquisa
+
+Em `Rust` não há uma função nativa para ordenação e pesquisa dentro de matrizes, farei o exemplo de ordenação básico em `estudos/cap07/ex02-matriz-ordenate`.
+
+Qualquer hora vou pegar para codificar os métodos de ordenação em `Rust`, que tal fazermos isso como exercício?
+
+### Pesquisa de Elementos Matriciais
+
+Em pesquisa o autor dá um exemplo de uma pesquisa básica com um `while` na matriz inteira procurando, e outro exemplo de pesquisa binária que vai quebrando a matriz ao meio para a busca ser mais rápida em matrizes que são ordenadas.
+
+## Iteradores
+ 
+Esta parte do livro aborda sobre iteradores e ressalta algumas particularidades do `Rust`, como o uso o `next()` e alguns benefícios do `iter()`. 
+
+Há bastante conteúdo e é realmente interessante, alguns exemplos estão em `estudos/cap07/ex03-iterator`.
