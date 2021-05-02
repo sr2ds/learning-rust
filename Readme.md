@@ -570,3 +570,32 @@ Em pesquisa o autor dá um exemplo de uma pesquisa básica com um `while` na mat
 Esta parte do livro aborda sobre iteradores e ressalta algumas particularidades do `Rust`, como o uso o `next()` e alguns benefícios do `iter()`. 
 
 Há bastante conteúdo e é realmente interessante, alguns exemplos estão em `estudos/cap07/ex03-iterator`.
+
+
+# #08 Estruturas heterogêneas - 02/05/2021 🦀 
+
+Se nas estrutura homogêneas os dados que compôem às matrizes são do mesmo tipo, aqui nas heterogêneas pode ser diferente.
+
+O primeiro tópico abordado são tuplas. As tuplas tem um comportamento similar ao do array e pode ser utilizado com o `match`, vejamos alguns exemplos:
+
+```rust
+    let tupla = (1, 2, "David", "Silva", "Rust", "Language");
+    println!("{:?}",  tupla);
+    println!("{}",  tupla.0); // 1
+    println!("{}",  tupla.2); // David
+```
+
+Perceba que o acesso ao dados é com o `.` e a posição dele.
+
+Com match, podemos fazer algo assim:
+
+```rust
+    let tupla = (1, 2);
+
+    match tupla {
+        (1, 2) => println!("Print 1, 2"),
+        _ => println!("Não corresponde")
+    };
+```
+
+Também pode-ser retornar uma tupla diretamente em um sub-rotina.
