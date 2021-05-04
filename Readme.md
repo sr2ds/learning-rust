@@ -729,3 +729,14 @@ fn main() {
 }
 
 ```
+
+Os autor aborda de forma bem detalhada a respeito das formas de implementação de orientação a objetos com `Rust`, estrutura de getter/setter, polimorfismo, instância de objetos, etc.. Nestes exemplos ele aborda sobre as `traits` e replica um exemplo sobre o comportamento da POO com `trait` e `struct`. Não vou entrar neste detalhe aqui agora, talvez volte depois e refatore, mas por hora vou prosseguir.
+
+# #09 Suplementos  - 04/05/2021 🦀
+
+Este capítulo começa abordando sobre o uso de tipos genéricos com `T`. Isso eu realmente não fazia a mínima ideia do que era até agora, e já está mais claro. 
+
+Ao declarar o T como tipo de alguma sub-rotina, ela passa a receber parâmetros de qualquer tipo. Não necessariamente precisa chamar de T, pode usar qualquer nome em maiusculo para que funcione. 
+
+É importante ressaltar que para que certas operações funcioem é necessário implementar algo junto ao T e de fato faz sentido pois como você vai, por exemplo, comparar dois valores se não há implementação nenhuma de tipo neles? 
+
