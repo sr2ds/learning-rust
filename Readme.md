@@ -667,3 +667,65 @@ fn main() {
     println!("O Cao:"); pet.miar(&cao);
 }
 ```
+
+Na sequência, o autor fala a respeitos de `enum`, e abaixo está um exemplo sobre o uso de `enum` no `Rust`: 
+
+
+``` rust
+enum DDD {
+    SP = 11,
+    MG = 31
+}
+
+fn main() {
+    println!("DDD de São Paulo: {:?}", DDD::SP as u8);
+    println!("DDD de Minas Gerais: {:?}", DDD::MG as u8);
+}
+```
+
+A definição de uma `enum` é bem parecido com a de uma `struct`, porém o acesso a ela é com `::`.
+É iportante ressaltar que, em uma lista `enum` somente numerada, você pode definir o primeiro valor e os próximos serão de acrescimentos automáticos, no formato de indice, por exemplo:
+
+``` rust
+enum UFs {
+    SP = 10, // definir o primeiro como 10
+    MG,
+    BA,
+    RJ
+}
+
+fn main() {
+    println!("UFs SP {:?}", UFs::SP as u8);
+    println!("UFs MG {:?}", UFs::MG as u8); // automáticamente este é 11 e assim por diante
+}
+```
+
+O uso combinado de `enum` e `scruct` nos permite comportamentos de herança que estamos acostumados na orientação a objetos, veja um exemplo simples e prático.
+
+``` rust
+#[derive(Debug)]
+enum Profession {
+    Developer,
+    Architect,
+    Engineer,
+}
+
+struct People {
+    name: String,
+    age: u8,
+    profession: Profession,
+}
+
+fn main() {
+    let people = People {
+        name: "David".to_string(),
+        age: 27,
+        profession: Profession::Engineer,
+    };
+
+    println!("People name: {:?}", people.name);
+    println!("People age: {:?}", people.age);
+    println!("People profession: {:?}", people.profession); // é necessário setar o derive(Debug) na enum para dar print assim
+}
+
+```
