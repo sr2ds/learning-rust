@@ -599,3 +599,71 @@ Com match, podemos fazer algo assim:
 ```
 
 Também pode-ser retornar uma tupla diretamente em um sub-rotina.
+
+Na sequência, o livro aborda os usos de `struct`, com exemplos para as três formas comuns de utilização na linguagem `Rust`, sendo eles: Estrutura Clássica, Estrutura Tupla e Estrutura Unidade.
+
+No primeiro exemplo, como estrutura clássica, o uso do `struct` é similar a um objeto de definição de tipo, um molde (ou forma) para a criação de uma varíavel:
+
+``` rust
+struct Pessoa {
+    nome: String,
+    idade: i32,
+    profissao: String,
+}
+
+fn main() {
+    let pessoa = Pessoa {
+        nome: "David".to_string(),
+        idade: 27,
+        profissao: "Software Engineer".to_string(),
+    };
+    println!("{}", pessoa.nome); // David
+}
+
+```
+
+Como feito acima, uma `struct` é feita fora do `main()`, utilizando `CamelCase` em seu título e o acesso ao dado é feito com `.`, similar a tupla.
+É importante ressaltar que no caso da tupla, não é esperado que os dados tenha conexão contextual, já no caso de uma struct sim.
+
+Já na estrutura tupla, utilizamos a palavra reservada struct também, porém com os parenteses, como uma tupla mesmo. E neste formato não deve-se passar os nomes dos campos:
+
+``` rust
+struct Idades(u8, u8);
+
+fn main() {
+    let idades = Idades(27, 28);
+    println!("{}", idades.0); // 27
+    println!("{}", idades.1); // 28
+}
+```
+
+Apesar de possível, não faz muito sentido estruturar essa tupla com dados de tipo diferente, isso dificultará a utilização posterior.
+
+No casos das estruturas de unidade, temos uma exmplo que nos lembra o uso de interfaces, onde utilizamos uma struct com a palavra reservada `impl` para abstrair alguma sub-rotina, parecido com o pattern Factory.
+
+``` rust
+struct Animal;
+struct Cao;
+struct Gato;
+
+impl Animal {
+    fn latir(&self, som: &Cao) -> () {
+        println!("au au");
+    }
+}
+
+impl Animal {
+    fn miar(&self, som: &Gato) -> () {
+        println!("miau");
+    }
+}
+
+fn main() {
+    let pet = Animal{};
+    let cao = Cao{};
+    let gato = Gato{};
+
+    println!("O Gato:"); pet.miar(&gato);
+    println!("O Cao:"); pet.miar(&cao);
+}
+```
