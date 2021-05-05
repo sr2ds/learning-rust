@@ -4,23 +4,45 @@
     <img src="assets/rust-language-logo.jpg" width="30%"> 
 </div>
 
-Este repositório servirá como apoio aos meus estudos de Rust, que serão realizados como um hoobie 🎮, toda quarta-feira no estilo dia do futebol.
+🇺🇸 🇺🇸 If you want read this content in english, [see this link](./Readme-us.md). Yet is one auto translate but I'm go to revised be soon. 🇺🇸 🇺🇸 
+
+Este repositório serviu de apoio aos meus estudos iniciais da linguagem Rust e ficarei feliz se ajudar você como conteúdo complementar a seus proprios estudos.
 
 Meu intuito é aprender outra linguagem que foge das que trabalho diariamente, que são de alto nível.
 
-Os estudos serão realizados com base na leitura do livro - Primeiros passos com a linguagem Rust, do mestre José Augusto N. G. Manzano. Provavelmente eu consumirei vídeos e a documentação também no decorrer do processo.
+Os estudos foram realizados com base na leitura do livro - [Primeiros passos com a linguagem Rust - José Augusto N. G. Manzano](https://amzn.to/3dBDBF1). 
 
-Eu tenho alguns anos de experiência com tecnologia, então isso não será exatamente do zero. Exceto pelo fato de eu não ter tido contato nenhum com Rust até o presente momento, somente guardei a curiosidade e me organizei para começar a estudar e testar.
+Eu tenho alguns anos de experiência com tecnologia, então isso não será exatamente do zero. Exceto pelo fato de eu não ter tido contato nenhum com Rust até o inicio do projeto, somente guardei a curiosidade e me organizei para começar a estudar e testar.
 
-O meu fluxo de aprendizagem será utilizando sessões de pomodóro, alternando entre leitura focada + lembrança do conteúdo que acabei de ler + criação de texto explicativo sobre o que eu entendi. Em alguns casos não farei em um único dia, mas não estudarei mais de 2 horas quando puder estudar.
+O meu fluxo de aprendizagem foi com sessões de pomodóro, alternando entre leitura focada + lembrança do conteúdo que acabei de ler + criação de texto explicativo sobre o que eu entendi. No inicio os capítulos mais simples fiz em algumas horas o processo todo, mas com o passar do tempo ficou mais complexo e há capítulos que demorei 1 ou 2 semanas estudando.
 
-Esse método é parte do que aprendi no livro Learning how to learn - Barbara Oakley.
+Esse método é parte do que aprendi no livro "Learning how to learn - Barbara Oakley".
 
 Curto estudar com essa playlist de fundo: https://music.youtube.com/watch?v=BMuknRb7woc&feature=share
 
 Pomodóro Timer: https://gnomepomodoro.org/
 
-Link para comprar o livro Primeiros Passos com a Linguagem Rust: https://amzn.to/3dBDBF1
+# Lista de Conteúdos
+
+[Capítulo 01 - Linguagem Rust](#01-linguagem-rust)
+
+[Capítulo 02 - Ação Sequêncial](#02-acão-sequêncial)
+
+[Capítulo 03 - Desvio Condicional](#03-desvio-condicional)
+
+[Capítulo 04 - Laços](#04-laços)
+
+[Capítulo 05 - Sub-Rotinas](#05-subrotinas)
+
+[Capítulo 06 - Complementos](#06-complementos)
+
+[Capítulo 07 - Estruturas homogêneas](#07-estruturas-homogêneas)
+
+[Capítulo 08 - Estruturas heterogêneas](#08-estruturas-heterogÊneas)
+
+[Capítulo 09 - Suplementos ](#09-suplementos)
+
+[Como contribuir](#contribuir)
 
 Edit 1: Na terceira quarta-feira, eu já tinha lido o livro durante outros dias espalhados, e também praticado os exercícios. Isso acabará sendo um esforço semanal mesmo pois estou mega empolgado, mas quando a semana apertar de demandas, farei apenas na quarta-feira, como combinado 🙋
 
@@ -31,7 +53,7 @@ Edit 3: Estou no capítulo 6 e comecei a praticar em alguns pequenos projetos, c
 Feedback pontual: Passando da metade do livro, já posso dizer que o conteúdo é legal e de simples compreensão.
 Não posso dizer que você estará pronto para ser um `Rust Developer` só com esta leitura, para isso precisará por em prática o que for aprendendo em outros contextos, principalmente para compreender os padrões usados nos grandes projetos, assim como explorar os poderes das bibliotecas internas. Mas o livro já dá um ponta pé inicial sim.
 
-# #01 Linguagem Rust - 10/03/2021 -> 2 horas de estudo 🦀
+# 01 Linguagem Rust
 
 Foi inicialmente desenvolvida por um membro da equipe do Firefox Reaseach, em 2010 o Firefox adotou ela e agora é mantida também pelo time Firefox (não somente pelo membro inicial).
 
@@ -51,7 +73,7 @@ Também fiz os exemplos com `cargo`, ele faz toda gestão mesmo no estilo `npm i
 
 Os arquivos de configuração aqui são `TOML`, que é no estilo `YAML` mesmo, não tem muito segredo ainda.
 
-# #02 Ação Sequêncial - 17/03/2021 -> 3 dias de estudos com revisão espaçada + vários dias de exercícios 🦀
+# 02 Ação Sequêncial
 
 Este capítulo é maior e tem muitos detalhes a serem explorados e testados, tudo girou em torno dos tipos de dados do `Rust`. Os tipos primitivos, que já estamos acostumados como String, Inteiros, Floats e Conjuntos.
 
@@ -134,7 +156,7 @@ Após vários exemplos de utilização, para fechar o capítulo, têm uma série
 PS: Eu brincarei praticando, então não espere respostas exatas para as questões do livro.
 PS: Cansei dos exercícios do capítulo 2, por enquanto. Fiz 9 de 13 e vou partir pro próximo capítulo hoje.
 
-# #03 Desvio Condicional - 24/03/2021 -> 2 dias de estudos + exercícios 🦀
+# 03 Desvio Condicional
 
 Este capítulo trata do (obviamente) desvios condicionais. Ou seja, os if e else da vida.
 Para explicar tudo isso, claro, precisa-se falar de operadores lógicos como && || ! e tudo isso foi dito, assim como == != >= <=.
@@ -221,7 +243,7 @@ Isso fecha o capítulo 3, agora vou aos exercícios.
 PS: Em nenhum exercício eu copio e colo do anterior, nem fico consultando o livro. Eu literalmente faço um a um. Entretanto, cansei de fazer entrada de input e estou criando método para resolver isso sem ficar repetindo tanto a tratativa e a entrada de dados. Vou continar digitando tudo sem repetir, mas agora com um método para facilitar.
 Sobre criação de métodos, no livro não chegamos nisso ainda mas aprendi aqui: https://doc.rust-lang.org/rust-by-example/fn.html
 
-# #04 Laços - 31/03/2021 -> 1 hora em média para estudo e réplica de exemplo 🦀
+# 04 Laços
 
 Os laços em `Rust` são, ao meu ver, normais. Não há nada de especial a não ser o fato de não haver `do while`. Apesar que eu raramente/nunca preciso usar `do while` na vida real.
 
@@ -249,7 +271,7 @@ Depois de incluir a dependencia no `Cargo.toml`, não precisa rodar um `npm inst
 
 Este exercício é legal pois além de tratar sobre o uso de uma lib externa, também brinca com outros recursos do `std` e mostra o uso do `loop`.
 
-# #05 Sub-Rotinas - 01/04/2021 -> 3 horas de estudo e prática em dias distribuídos 🦀
+# 05 Sub-Rotinas
 
 Este capítulo aborda o que no dia-a-dia generalizamos para `funções`, mas é super legal retomar estes conceitos que acabamos esquecendo no decorrer do trabalho.
 
@@ -388,7 +410,7 @@ let incrementador = | x :i32 -> i32 | {
 incrementador(1);
 ```
 
-# #06 Complementos - 05/04/2021 🦀 
+# 06 Complementos
 
 Este capítulo aborda diversos tópicos que são importantes na linguagem, começando por conversão de tipos.
 
@@ -461,7 +483,7 @@ unsafe {
 
 É possível criar uma lib desacoplada do arquivo principal, há algumas maneiras de fazer isso e neste capítulo o livro aborda criando um arquivo, declarando na sessão lib do `Cargo.Toml` e importando para o main. Você pode ver um exemplo disso no `estudos/cap06/ex03-creating-lib`, nada complexo, é apenas o teste de importação de lib. Também há como desenvolver como `mod`, mas ainda não foi falado no livro.
 
-# #07 Estruturas homogêneas - 15/04/2021 🦀 
+# 07 Estruturas homogêneas
 
 Este capítulo aborda estrutura de diversos tipos de matrizes/arrays, pesquisa e ordenação. Os exemplos são bem completos até para quem não é de programação, vou tentar resumir por tópico com enfase nas particularidades do `Rust`.
 
@@ -572,7 +594,7 @@ Esta parte do livro aborda sobre iteradores e ressalta algumas particularidades 
 Há bastante conteúdo e é realmente interessante, alguns exemplos estão em `estudos/cap07/ex03-iterator`.
 
 
-# #08 Estruturas heterogêneas - 02/05/2021 🦀 
+# 08 Estruturas heterogêneas
 
 Se nas estrutura homogêneas os dados que compôem às matrizes são do mesmo tipo, aqui nas heterogêneas pode ser diferente.
 
@@ -732,7 +754,7 @@ fn main() {
 
 Os autor aborda de forma bem detalhada a respeito das formas de implementação de orientação a objetos com `Rust`, estrutura de getter/setter, polimorfismo, instância de objetos, etc.. Nestes exemplos ele aborda sobre as `traits` e replica um exemplo sobre o comportamento da POO com `trait` e `struct`. Não vou entrar neste detalhe aqui agora, talvez volte depois e refatore, mas por hora vou prosseguir.
 
-# #09 Suplementos  - 04/05/2021 🦀
+# 09 Suplementos 
 
 Este capítulo começa abordando sobre o uso de tipos genéricos com `T`. Isso eu realmente não fazia a mínima ideia do que era até agora, e já está mais claro. 
 
@@ -740,3 +762,7 @@ Ao declarar o T como tipo de alguma sub-rotina, ela passa a receber parâmetros 
 
 É importante ressaltar que para que certas operações funcioem é necessário implementar algo junto ao T e de fato faz sentido pois como você vai, por exemplo, comparar dois valores se não há implementação nenhuma de tipo neles? 
 
+
+# Como Contribuir
+
+Contribuições são bem-vindas! Se você quiser corrigir algum texto, revisar alguma implementação ou até mesmo dar exemplos melhores em relação a algum conteúdo, fique à vontade. Basta mandar um Pull Request :)
