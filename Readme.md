@@ -394,14 +394,14 @@ incrementador(1);
 Também podemos definir o tipo do retorno:
 
 ```rust
-let incrementador = | x :i32 -> i32 | x + 1;
+let incrementador = | x :i32 | -> i32 { x + 1 };
 incrementador(1);
 ```
 
 Para uma visão mais clara, isso pode acontecer como um exemplo de função completa, com regras complexas e quebra de linha:
 
 ```rust
-let incrementador = | x :i32 -> i32 | {
+let incrementador = | x :i32 | -> i32 {
     let valor_incremento :i32 = 1;
     let valor_incrementado :i32 = x + valor_incremento;
     return valor_incrementado
